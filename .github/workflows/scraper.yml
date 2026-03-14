@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
-          git add data.json
+          git add data.json debug_screenshot.png
           # Якщо є зміни, комітимо і пушимо. Якщо даних нових немає - ігноруємо.
           git diff --quiet && git diff --staged --quiet || (git commit -m "Оновлено data.json" && git push)
           

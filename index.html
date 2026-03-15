@@ -7,9 +7,12 @@
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
     <style>
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        #map { height: 100vh; width: 100%; }
+        #map { height: 100vh; width: 100%; background: #f0f0f0; }
         
         /* Стилі для попапа */
         .popup-content { max-width: 250px; }
@@ -25,6 +28,7 @@
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
 <script>
     // Ініціалізація карти. Координати центру України, зум 6
@@ -35,8 +39,12 @@
         maxZoom: 18
     }).addTo(map);
 
-    // Відносний шлях до файлу (працює ідеально для GitHub Pages)
-    // Додаємо timestamp, щоб браузер завжди завантажував найсвіжіший файл
+    // Створюємо "контейнер" для наших кластерів
+    const markers = L.markerClusterGroup({
+        chunkedLoading: true, // Допомагає не гальмувати браузер, якщо об'єктів тисячі
+        spiderfyOnMaxZoom: true // Розсуває маркери "павутинкою", якщо вони на одних координатах і зум максимальний
+    });
+
     const dataUrl = `data.json?t=${new Date().getTime()}`;
 
     fetch(dataUrl)
@@ -58,11 +66,14 @@
                         </div>
                     `;
 
-                    L.marker([item.lat, item.lng])
-                        .addTo(map)
-                        .bindPopup(popupHTML);
+                    // Створюємо маркер, але ЗАМІСТЬ додавання його одразу на карту, кладемо в контейнер
+                    const marker = L.marker([item.lat, item.lng]).bindPopup(popupHTML);
+                    markers.addLayer(marker);
                 }
             });
+
+            // Вивалюємо всі зібрані маркери на карту одним махом
+            map.addLayer(markers);
         })
         .catch(error => {
             console.error("Виникла помилка:", error);

@@ -29,12 +29,18 @@ jobs:
 
       - name: Run parser
         run: python parse.py
-
+        
       - name: Commit and Push changes
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "action@github.com"
           git add data.json debug_screenshot.png
-          # Якщо є зміни, комітимо і пушимо. Якщо даних нових немає - ігноруємо.
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Оновлено data.json" && git push)
           
+          # Якщо є зміни, робимо коміт
+          git diff --quiet && git diff --staged --quiet || git commit -m "Оновлено data.json"
+          
+          # Підтягуємо нові файли (наприклад, твій index.html), які з'явилися під час роботи бота
+          git pull --rebase origin main
+          
+          # Відправляємо все разом на GitHub
+          git push

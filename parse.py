@@ -5,9 +5,11 @@ from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 from geopy.geocoders import Nominatim
 
-geolocator = Nominatim(user_agent="my_olx_premium_parser")
+# Налаштовуємо геокодер
+geolocator = Nominatim(user_agent="my_olx_premium_parser_final")
 
 def get_coords(address):
+    """Отримує координати"""
     try:
         location = geolocator.geocode(f"{address}, Україна", timeout=10)
         if location:
@@ -29,6 +31,7 @@ async def parse_olx_filtered():
         results = []
         current_page = 1
         coords_cache = {}
+        seen_links = set() # Пам'ять для унікальних посилань
         
         while True:
             url = f"https://www.olx.ua/uk/nedvizhimost/doma/prodazha-domov/?currency=USD&search%5Bfilter_enum_communications%5D%5B0%5D=sewerage_septic_tank&search%5Bfilter_float_price%3Afrom%5D=5000&search%5Bfilter_float_price%3Ato%5D=14000&search%5Border%5D=created_at%3Adesc&page={current_page}"
@@ -49,7 +52,7 @@ async def parse_olx_filtered():
             if len(listings) == 0:
                 break
 
-            print(f"Знайдено {len(listings)} оголошень. Обробляю...", flush=True)
+            print(f"Знайдено {len(listings)} оголошень на сторінці. Обробляю...", flush=True)
 
             for item in listings:
                 title_el = item.select_one('h4') or item.select_one('h6') or item.select_one('div[data-cy="ad-title"]')
@@ -60,16 +63,21 @@ async def parse_olx_filtered():
                 if not link_el:
                     continue
 
+                link = link_el['href']
+                if link.startswith('/'):
+                    link = "https://www.olx.ua" + link
+
+                # Відсікаємо дублікати (ТОП-оголошення)
+                if link in seen_links:
+                    continue
+                seen_links.add(link)
+
                 title = title_el.get_text(strip=True) if title_el else "Без назви"
                 price = price_el.get_text(separator=" ", strip=True) if price_el else "Ціна не вказана"
                 location_full = location_el.get_text(strip=True) if location_el else "Невідомо"
                 
                 village = location_full.split(' - ')[0] if ' - ' in location_full else location_full
                 
-                link = link_el['href']
-                if link.startswith('/'):
-                    link = "https://www.olx.ua" + link
-
                 if village in coords_cache:
                     lat, lng = coords_cache[village]
                 else:
@@ -87,7 +95,7 @@ async def parse_olx_filtered():
                         "link": link
                     })
 
-            # ЛОГІКА ЗУПИНКИ: Шукаємо кнопку переходу на наступну сторінку
+            # Перевірка наявності кнопки "Наступна сторінка"
             next_button = soup.select_one('[data-cy="pagination-forward"]')
             if not next_button:
                 print(f"Кнопку 'Наступна сторінка' не знайдено. Сторінка {current_page} - остання. Зупиняюсь.", flush=True)
@@ -98,7 +106,7 @@ async def parse_olx_filtered():
         with open('data.json', 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
             
-        print(f"Готово! Всього збережено {len(results)} карток у data.json", flush=True)
+        print(f"Готово! Всього збережено {len(results)} унікальних карток у data.json", flush=True)
         await browser.close()
 
 asyncio.run(parse_olx_filtered())

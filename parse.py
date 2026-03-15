@@ -1,24 +1,3 @@
-import asyncio
-import json
-import time
-from playwright.async_api import async_playwright
-from bs4 import BeautifulSoup
-from geopy.geocoders import Nominatim
-
-# Налаштовуємо геокодер
-geolocator = Nominatim(user_agent="my_olx_premium_parser")
-
-def get_coords(address):
-    """Отримує координати"""
-    try:
-        location = geolocator.geocode(f"{address}, Україна", timeout=10)
-        if location:
-            return location.latitude, location.longitude
-        return None, None
-    except Exception as e:
-        print(f"Помилка геокодування для {address}: {e}")
-        return None, None
-
 async def parse_olx_filtered():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
@@ -30,33 +9,31 @@ async def parse_olx_filtered():
         
         results = []
         current_page = 1
-        coords_cache = {}  # Словник для збереження координат, щоб не робити зайвих запитів
+        coords_cache = {}
         
-        # Безкінечний цикл, який зупиниться, коли закінчаться сторінки
         while True:
-            # Формуємо URL з динамічним номером сторінки
             url = f"https://www.olx.ua/uk/nedvizhimost/doma/prodazha-domov/?currency=USD&search%5Bfilter_enum_communications%5D%5B0%5D=sewerage_septic_tank&search%5Bfilter_float_price%3Afrom%5D=5000&search%5Bfilter_float_price%3Ato%5D=14000&search%5Border%5D=created_at%3Adesc&page={current_page}"
             
             print(f"--- Завантажую сторінку {current_page} ---")
             await page.goto(url, wait_until="domcontentloaded")
 
             try:
-                # Чекаємо картки. Якщо за 10 секунд їх немає - скоріше за все сторінки закінчились
-                await page.wait_for_selector('div[data-cy="l-card"]', timeout=10000)
+                await page.wait_for_selector('div[data-cy="l-card"]', timeout=15000)
             except Exception:
-                print(f"Картки не знайдено на сторінці {current_page}. Схоже, це остання сторінка.")
-                break  # Виходимо з циклу
+                print(f"Картки не знайдено. Завершуємо парсинг.")
+                break
+
+            # 1. ФІКС ДЛЯ 40 ОГОЛОШЕНЬ: Імітуємо скрол вниз, щоб підвантажити всі картки
+            print("Скролю сторінку для підвантаження всіх карток...")
+            for _ in range(4): # 4 рази прокручуємо вниз потроху
+                await page.evaluate("window.scrollBy(0, 1000)")
+                time.sleep(1) # Даємо час скриптам OLX відмалювати картки
 
             content = await page.content()
             soup = BeautifulSoup(content, 'html.parser')
             listings = soup.select('div[data-cy="l-card"]')
 
-            # Додаткова перевірка на пусту сторінку
-            if len(listings) == 0:
-                print(f"Оголошень на сторінці {current_page} немає. Завершуємо парсинг.")
-                break
-
-            print(f"Знайдено {len(listings)} оголошень. Обробляю...")
+            print(f"Знайдено {len(listings)} оголошень на сторінці {current_page}. Обробляю...")
 
             for item in listings:
                 title_el = item.select_one('h4') or item.select_one('h6') or item.select_one('div[data-cy="ad-title"]')
@@ -77,14 +54,12 @@ async def parse_olx_filtered():
                 if link.startswith('/'):
                     link = "https://www.olx.ua" + link
 
-                # Перевіряємо, чи ми вже шукали координати для цього села
                 if village in coords_cache:
                     lat, lng = coords_cache[village]
                 else:
-                    print(f"Нова локація: шукаю координати для {village}...")
                     lat, lng = get_coords(village)
-                    coords_cache[village] = (lat, lng)  # Записуємо в кеш
-                    time.sleep(1.1)  # Пауза тільки якщо робили реальний запит
+                    coords_cache[village] = (lat, lng)
+                    time.sleep(1.1)
 
                 if lat and lng:
                     results.append({
@@ -96,13 +71,18 @@ async def parse_olx_filtered():
                         "link": link
                     })
 
-            # Збільшуємо лічильник для переходу на наступну сторінку
+            # 2. ФІКС ДЛЯ НЕСКІНЧЕННОГО ЦИКЛУ: Шукаємо кнопку "Наступна сторінка"
+            next_button = soup.select_one('[data-cy="pagination-forward"]')
+            
+            # Якщо кнопки "Вперед" немає, значить ми дійшли до останньої сторінки
+            if not next_button:
+                print(f"Кнопку 'Наступна сторінка' не знайдено. Сторінка {current_page} - остання.")
+                break
+
             current_page += 1
 
         with open('data.json', 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
             
-        print(f"Готово! Всього збережено {len(results)} унікальних карток у data.json")
+        print(f"Готово! Всього збережено {len(results)} карток у data.json")
         await browser.close()
-
-asyncio.run(parse_olx_filtered())

@@ -1,40 +1,104 @@
-name: OLX Parser
+import asyncio
+import json
+import time
+from playwright.async_api import async_playwright
+from bs4 import BeautifulSoup
+from geopy.geocoders import Nominatim
 
-on:
-  schedule:
-    - cron: '0 */2 * * *' # Запуск кожні 2 години
-  workflow_dispatch: # Дозволяє запускати скрипт вручну кнопкою
+geolocator = Nominatim(user_agent="my_olx_premium_parser")
 
-permissions:
-  contents: write # Дає боту право записувати оновлений data.json у репозиторій
+def get_coords(address):
+    try:
+        location = geolocator.geocode(f"{address}, Україна", timeout=10)
+        if location:
+            return location.latitude, location.longitude
+        return None, None
+    except Exception as e:
+        print(f"Помилка геокодування для {address}: {e}", flush=True)
+        return None, None
 
-jobs:
-  scrape-and-update:
-    runs-on: ubuntu-latest
+async def parse_olx_filtered():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            viewport={"width": 1920, "height": 1080}
+        )
+        page = await context.new_page()
+        
+        results = []
+        current_page = 1
+        coords_cache = {}
+        
+        while True:
+            url = f"https://www.olx.ua/uk/nedvizhimost/doma/prodazha-domov/?currency=USD&search%5Bfilter_enum_communications%5D%5B0%5D=sewerage_septic_tank&search%5Bfilter_float_price%3Afrom%5D=5000&search%5Bfilter_float_price%3Ato%5D=14000&search%5Border%5D=created_at%3Adesc&page={current_page}"
+            
+            print(f"--- Завантажую сторінку {current_page} ---", flush=True)
+            await page.goto(url, wait_until="domcontentloaded")
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+            try:
+                await page.wait_for_selector('div[data-cy="l-card"]', timeout=10000)
+            except Exception:
+                print(f"Картки не знайдено на сторінці {current_page}. Зупинка.", flush=True)
+                break
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+            content = await page.content()
+            soup = BeautifulSoup(content, 'html.parser')
+            listings = soup.select('div[data-cy="l-card"]')
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          python -m playwright install chromium
+            if len(listings) == 0:
+                break
 
-      - name: Run parser
-        run: python parse.py
+            print(f"Знайдено {len(listings)} оголошень. Обробляю...", flush=True)
 
-      - name: Commit and Push changes
-        run: |
-          git config --global user.name "GitHub Action Bot"
-          git config --global user.email "action@github.com"
-          git add data.json debug_screenshot.png
-          # Якщо є зміни, комітимо і пушимо. Якщо даних нових немає - ігноруємо.
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Оновлено data.json" && git push)
-          
+            for item in listings:
+                title_el = item.select_one('h4') or item.select_one('h6') or item.select_one('div[data-cy="ad-title"]')
+                price_el = item.select_one('[data-testid="ad-price"]')
+                location_el = item.select_one('[data-testid="location-date"]')
+                link_el = item.select_one('a')
+
+                if not link_el:
+                    continue
+
+                title = title_el.get_text(strip=True) if title_el else "Без назви"
+                price = price_el.get_text(separator=" ", strip=True) if price_el else "Ціна не вказана"
+                location_full = location_el.get_text(strip=True) if location_el else "Невідомо"
+                
+                village = location_full.split(' - ')[0] if ' - ' in location_full else location_full
+                
+                link = link_el['href']
+                if link.startswith('/'):
+                    link = "https://www.olx.ua" + link
+
+                if village in coords_cache:
+                    lat, lng = coords_cache[village]
+                else:
+                    lat, lng = get_coords(village)
+                    coords_cache[village] = (lat, lng)
+                    time.sleep(1.1)
+
+                if lat and lng:
+                    results.append({
+                        "title": title,
+                        "price": price,
+                        "location": village,
+                        "lat": lat,
+                        "lng": lng,
+                        "link": link
+                    })
+
+            # ЛОГІКА ЗУПИНКИ: Шукаємо кнопку переходу на наступну сторінку
+            next_button = soup.select_one('[data-cy="pagination-forward"]')
+            if not next_button:
+                print(f"Кнопку 'Наступна сторінка' не знайдено. Сторінка {current_page} - остання. Зупиняюсь.", flush=True)
+                break
+
+            current_page += 1
+
+        with open('data.json', 'w', encoding='utf-8') as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+            
+        print(f"Готово! Всього збережено {len(results)} карток у data.json", flush=True)
+        await browser.close()
+
+asyncio.run(parse_olx_filtered())

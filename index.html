@@ -14,6 +14,35 @@
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         #map { height: 100vh; width: 100%; background: #f0f0f0; }
         
+        /* Стилі для панелі фільтрів */
+        .filter-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000; /* Щоб панель була поверх карти Leaflet */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 200px;
+        }
+        
+        .filter-panel label { font-weight: 600; font-size: 14px; color: #002f34; }
+        .filter-panel select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+        }
+        .filter-panel select:focus { border-color: #002f34; }
+        
+        .stats { font-size: 12px; color: #555; text-align: right; margin-top: 5px; }
+
         /* Стилі для попапа */
         .popup-content { max-width: 250px; }
         .title { font-weight: 600; font-size: 14px; margin-bottom: 8px; line-height: 1.3; }
@@ -25,13 +54,24 @@
 </head>
 <body>
 
+<div class="filter-panel">
+    <label for="price-filter">Фільтр за ціною:</label>
+    <select id="price-filter">
+        <option value="all">Усі ціни (5 000$ - 16 000$)</option>
+        <option value="5000-7000">Від 5 000$ до 7 000$</option>
+        <option value="7000-9500">Від 7 000$ до 9 500$</option>
+        <option value="9500-11500">Від 9 500$ до 11 500$</option>
+        <option value="11500-16000">Від 11 500$ до 16 000$</option>
+    </select>
+    <div class="stats" id="results-count">Завантаження...</div>
+</div>
+
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
 <script>
-    // Ініціалізація карти. Координати центру України, зум 6
     const map = L.map('map').setView([48.3794, 31.1656], 6);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -39,45 +79,83 @@
         maxZoom: 18
     }).addTo(map);
 
-    // Створюємо "контейнер" для наших кластерів
-    const markers = L.markerClusterGroup({
-        chunkedLoading: true, // Допомагає не гальмувати браузер, якщо об'єктів тисячі
-        spiderfyOnMaxZoom: true // Розсуває маркери "павутинкою", якщо вони на одних координатах і зум максимальний
+    let markersCluster = L.markerClusterGroup({
+        chunkedLoading: true,
+        spiderfyOnMaxZoom: true
     });
+    
+    map.addLayer(markersCluster);
 
+    let globalHousesData = []; // Зберігаємо всю базу тут, щоб не робити fetch при кожному кліку
+
+    // Функція для очищення ціни (перетворює "12 500 $" на 12500)
+    function parsePrice(priceString) {
+        if (!priceString) return 0;
+        const cleanStr = priceString.replace(/\D/g, ''); // Видаляє все, крім цифр
+        return parseInt(cleanStr, 10) || 0;
+    }
+
+    // Головна функція відмальовки маркерів
+    function renderMarkers(filterRange) {
+        markersCluster.clearLayers(); // Очищаємо карту перед новим малюванням
+        let visibleCount = 0;
+
+        globalHousesData.forEach(item => {
+            if (!item.lat || !item.lng) return;
+
+            const priceNum = parsePrice(item.price);
+            let shouldShow = false;
+
+            // Логіка фільтрації
+            if (filterRange === 'all') {
+                shouldShow = true;
+            } else {
+                const [min, max] = filterRange.split('-').map(Number);
+                if (priceNum >= min && priceNum <= max) {
+                    shouldShow = true;
+                }
+            }
+
+            // Якщо оголошення підходить - створюємо маркер
+            if (shouldShow) {
+                visibleCount++;
+                const popupHTML = `
+                    <div class="popup-content">
+                        <div class="title">${item.title}</div>
+                        <div class="price">${item.price}</div>
+                        <div class="location">📍 ${item.location}</div>
+                        <a href="${item.link}" target="_blank" class="btn">Відкрити на OLX</a>
+                    </div>
+                `;
+                const marker = L.marker([item.lat, item.lng]).bindPopup(popupHTML);
+                markersCluster.addLayer(marker);
+            }
+        });
+
+        // Оновлюємо лічильник
+        document.getElementById('results-count').innerText = `Показано об'єктів: ${visibleCount}`;
+    }
+
+    // Завантаження даних
     const dataUrl = `data.json?t=${new Date().getTime()}`;
-
     fetch(dataUrl)
         .then(response => {
             if (!response.ok) throw new Error("Помилка завантаження бази даних");
             return response.json();
         })
         .then(data => {
-            console.log(`Завантажено оголошень: ${data.length}`);
-            
-            data.forEach(item => {
-                if (item.lat && item.lng) {
-                    const popupHTML = `
-                        <div class="popup-content">
-                            <div class="title">${item.title}</div>
-                            <div class="price">${item.price}</div>
-                            <div class="location">📍 ${item.location}</div>
-                            <a href="${item.link}" target="_blank" class="btn">Відкрити на OLX</a>
-                        </div>
-                    `;
-
-                    // Створюємо маркер, але ЗАМІСТЬ додавання його одразу на карту, кладемо в контейнер
-                    const marker = L.marker([item.lat, item.lng]).bindPopup(popupHTML);
-                    markers.addLayer(marker);
-                }
-            });
-
-            // Вивалюємо всі зібрані маркери на карту одним махом
-            map.addLayer(markers);
+            globalHousesData = data;
+            renderMarkers('all'); // Відмальовуємо всі маркери при старті
         })
         .catch(error => {
             console.error("Виникла помилка:", error);
+            document.getElementById('results-count').innerText = "Помилка завантаження";
         });
+
+    // Слухач подій для випадаючого списку
+    document.getElementById('price-filter').addEventListener('change', function(e) {
+        renderMarkers(e.target.value);
+    });
 </script>
 
 </body>

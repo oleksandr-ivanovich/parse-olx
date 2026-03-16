@@ -1,11 +1,123 @@
 [
   {
-    "title": "Будинок в Полтавській області",
+    "title": "Терміново продам будинок. 100м2",
+    "price": "12 500 $",
+    "location": "Соломна",
+    "lat": 49.390072,
+    "lng": 26.34659,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/termnovo-prodam-budinok-100m2-IDYn0jK.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Розстрочка м.Носівка. Г.Чорнобиля 31, приватизов.буд.та ділянка 0.10га",
+    "price": "6 800 $",
+    "location": "Носівка",
+    "lat": 50.9377744,
+    "lng": 31.5812258,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/rozstrochka-m-nosvka-g-chornobilya-31-privatizov-bud-ta-dlyanka-0-10ga-IDYvkgo.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Продамо дача-будинок",
+    "price": "11 000 $ Договірна",
+    "location": "Запоріжжя, Олександрiвський",
+    "lat": 47.8219961,
+    "lng": 35.1843837,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodamo-dacha-budinok-ID103h9q.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Дача Новоселівка ,,Лебединий Плесо\"",
+    "price": "12 600 $ Договірна",
+    "location": "Новоселівка",
+    "lat": 49.07541,
+    "lng": 37.69735,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/dacha-novoselvka-lebediniy-pleso-IDYPA6g.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продам дом РАЕН Синельниково 2.Дом не здаеться!",
+    "price": "14 000 $",
+    "location": "Синельникове",
+    "lat": 48.3269304,
+    "lng": 35.5246984,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-dom-raen-sinelnikovo-2-dom-ne-zdaetsya-IDYDftG.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Радушне. Продам будинок. Сертифікат",
+    "price": "8 000 $ Договірна",
+    "location": "Радушне",
+    "lat": 47.8226364,
+    "lng": 33.5014543,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/radushne-prodam-budinok-sertifkat-IDYFB38.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продам домик в Верховцево",
+    "price": "10 000 $",
+    "location": "Верхівцеве",
+    "lat": 48.48404,
+    "lng": 34.24232,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-domik-v-verhovtsevo-IDZwlpQ.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продам домик в Николаевке",
+    "price": "7 500 $ Договірна",
+    "location": "Миколаївка",
+    "lat": 48.8610868,
+    "lng": 37.7619191,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-domik-v-nikolaevke-IDWbhdB.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Домоволодіння в с. Яснозір'я (санвузол, піч з лежанкою, 3 фази) (п3)",
+    "price": "8 500 $",
+    "location": "Яснозір'я",
+    "lat": 49.474923,
+    "lng": 31.6028633,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/domovolodnnya-v-s-yasnozrya-sanvuzol-pch-z-lezhankoyu-3-fazi-p3-IDY4wWX.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продається будинок із земельним участком у с. Любимівка",
+    "price": "9 699 $ Договірна",
+    "location": "Любимівка",
+    "lat": 48.0480279,
+    "lng": 39.4527482,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-z-zemelnim-uchastkom-u-s-lyubimvka-IDZX8Dx.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продам будинок всі питання по телефону",
+    "price": "6 000 $ Договірна",
+    "location": "Нижня Ланна",
+    "lat": 49.375114,
+    "lng": 35.2107216,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-vs-pitannya-po-telefonu-ID105WTZ.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Дом с большой теплицей",
+    "price": "13 385.74 $",
+    "location": "Лук'янівка",
+    "lat": 50.4644462,
+    "lng": 30.4751496,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/dom-s-bolshoy-teplitsey-IDMxMIm.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Будинок в Солов'їній рощі",
+    "price": "14 000 $",
+    "location": "Нижня  Хортиця",
+    "lat": 47.770611,
+    "lng": 35.12981,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-solovny-rosch-IDZF27D.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продається будинок в оренду не здається",
+    "price": "14 000 $ Договірна",
+    "location": "Синельникове",
+    "lat": 48.3269304,
+    "lng": 35.5246984,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-v-orendu-ne-zdatsya-IDZYh1a.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "продаєм будинок із жилою літнєю кухнею",
     "price": "8 500 $ Договірна",
-    "location": "Курінька",
-    "lat": 50.1979061,
-    "lng": 32.7406169,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-poltavsky-oblast-IDN3ffD.html?search_reason=search%7Cpromoted"
+    "location": "Попівка",
+    "lat": 49.0212883,
+    "lng": 37.9385185,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-z-zhiloyu-ltnyu-kuhneyu-IDZk0n2.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "Продам уч 8 сот дом недострой 100м у. Херсонская верхний МОПР Ц.Город!",
@@ -16,12 +128,28 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-uch-8-sot-dom-nedostroy-100m-u-hersonskaya-verhniy-mopr-ts-gorod-IDQpwL5.html?search_reason=search%7Cpromoted"
   },
   {
-    "title": "Розстрочка м.Носівка. Г.Чорнобиля 31, приватизов.буд.та ділянка 0.10га",
-    "price": "6 800 $",
-    "location": "Носівка",
-    "lat": 50.9377744,
-    "lng": 31.5812258,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/rozstrochka-m-nosvka-g-chornobilya-31-privatizov-bud-ta-dlyanka-0-10ga-IDYvkgo.html?search_reason=search%7Cpromoted"
+    "title": "Продам 1/2 будинка в Курилівці",
+    "price": "13 000 $",
+    "location": "Курилівка",
+    "lat": 48.57983,
+    "lng": 34.60075,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-1-2-budinka-v-kurilvts-IDUZqmX.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Затишний будинок з гаражем та городом",
+    "price": "11 000 $ Договірна",
+    "location": "Грізне",
+    "lat": 48.0257,
+    "lng": 35.35091,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/zatishniy-budinok-z-garazhem-ta-gorodom-IDZGro0.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Продам Будинок в с.Петриківка вул.Зоряна",
+    "price": "5 500 $",
+    "location": "Петриківка",
+    "lat": 48.7222177,
+    "lng": 34.6232386,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-v-s-petrikvka-vul-zoryana-ID105UJx.html?search_reason=search%7Corganic"
   },
   {
     "title": "Продаж частини будинку! Вул Черкаська 6",
@@ -80,6 +208,30 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-dom-g-lozovaya-v-gorode-r-n-polikliniki-IDYh4zM.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Будинок в місті Носівка.",
+    "price": "11 000 $ Договірна",
+    "location": "Носівка",
+    "lat": 50.9377744,
+    "lng": 31.5812258,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-mst-nosvka-IDYd2kO.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Продам будинок!!!",
+    "price": "10 000 $ Договірна",
+    "location": "Веселинове",
+    "lat": 47.356307,
+    "lng": 31.2367979,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-IDXf29t.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Продам теплий будинок",
+    "price": "12 000 $ Договірна",
+    "location": "Бродецьке",
+    "lat": 49.7631513,
+    "lng": 28.6448603,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-tepliy-budinok-IDZVV6k.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "Дом в пригороде Одессы",
     "price": "10 000 $ Договірна",
     "location": "Буялик",
@@ -94,38 +246,6 @@
     "lat": 50.728001,
     "lng": 32.20985,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-v-s-obichv-ID104PyX.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продам будинок!!!",
-    "price": "10 000 $ Договірна",
-    "location": "Веселинове",
-    "lat": 47.356307,
-    "lng": 31.2367979,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-IDXf29t.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продам житло 75м2",
-    "price": "7 000 $ Договірна",
-    "location": "Брилівка",
-    "lat": 46.4201722,
-    "lng": 33.1410545,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-zhitlo-75m2-IDIa41t.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Дмитрівка, Мила, смарт-квартира з власним двориком",
-    "price": "12 000 $",
-    "location": "Мила",
-    "lat": 50.441376,
-    "lng": 30.172302,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/dmitrvka-mila-smart-kvartira-z-vlasnim-dvorikom-IDYXLDa.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Продаю дачу. Дзвоніть відповім на всі питання",
-    "price": "12 000 $",
-    "location": "Миколаїв, Заводський",
-    "lat": 46.9776096,
-    "lng": 31.9627781,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodayu-dachu-dzvont-vdpovm-na-vs-pitannya-IDZU8OE.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "ТЕРМІНОВО!!! Продам будинок у житловому стані / можливий обмін!!!",
@@ -184,6 +304,30 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-chastinu-budinku-v-pvdennomu-t25-IDZNMkV.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Продається будинок із земельним участком у с. Любимівка",
+    "price": "9 699 $ Договірна",
+    "location": "Любимівка",
+    "lat": 48.0480279,
+    "lng": 39.4527482,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-z-zemelnim-uchastkom-u-s-lyubimvka-IDZX8Dx.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Продам половину будинку !!!",
+    "price": "14 000 $ Договірна",
+    "location": "Вороновиця",
+    "lat": 49.1117881,
+    "lng": 28.6889425,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-polovinu-budinku-IDZgP7R.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Будиночок на березі Дніпра",
+    "price": "7 900 $ Договірна",
+    "location": "Запоріжжя, Вознесенівський",
+    "lat": 47.8712558,
+    "lng": 35.1043438,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/budinochok-na-berez-dnpra-IDUYT6t.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "дом в селе Кубанка, Одесской обл.",
     "price": "7 000 $",
     "location": "Кубанка",
@@ -208,30 +352,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodayu-budinok-selo-tublts-IDVehWK.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Продається будинок із земельним участком у с. Любимівка",
-    "price": "9 699 $ Договірна",
-    "location": "Любимівка",
-    "lat": 48.0480279,
-    "lng": 39.4527482,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-z-zemelnim-uchastkom-u-s-lyubimvka-IDZX8Dx.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Продається будинок з комунікаціями на 60 сотках ,можлива розстрочка.",
-    "price": "12 000 $",
-    "location": "Браниця",
-    "lat": 50.82756,
-    "lng": 31.36494,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-z-komunkatsyami-na-60-sotkah-mozhliva-rozstrochka-IDV3CXn.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Терміново продам будинок. 100м2",
-    "price": "12 500 $",
-    "location": "Соломна",
-    "lat": 49.390072,
-    "lng": 26.34659,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/termnovo-prodam-budinok-100m2-IDYn0jK.html?search_reason=search%7Cpromoted"
-  },
-  {
     "title": "Часть дома Бородинский",
     "price": "12 000 $",
     "location": "Запоріжжя, Дніпровський",
@@ -251,8 +371,8 @@
     "title": "Будинок у місті Хорол",
     "price": "11 000 $ Договірна",
     "location": "Хорол",
-    "lat": 49.782239,
-    "lng": 33.2740498,
+    "lat": 49.7822104,
+    "lng": 33.2740646,
     "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-u-mst-horol-IDYEbT3.html?search_reason=search%7Corganic"
   },
   {
@@ -288,6 +408,14 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-dvo-poverhoviy-IDZHc5X.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Продам (1/2) частину будинку садибного типу.",
+    "price": "10 000 $",
+    "location": "Берестин",
+    "lat": 49.3741326,
+    "lng": 35.4494234,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-1-2-chastinu-budinku-sadibnogo-tipu-IDVro7H.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "Батурин траса на Київ: частина будинку з ремонтом і газом є земля (SP)",
     "price": "8 000 $",
     "location": "Батурин",
@@ -310,30 +438,6 @@
     "lat": 48.045745,
     "lng": 30.8475997,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-gazifkovaniy-budinok-po-vul-o-pchlki-ranshe-vul-urtskogo-IDZRGTo.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продам теплий будинок",
-    "price": "12 000 $ Договірна",
-    "location": "Бродецьке",
-    "lat": 49.7631513,
-    "lng": 28.6448603,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-tepliy-budinok-IDZVV6k.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Продам (1/2) частину будинку садибного типу.",
-    "price": "10 000 $",
-    "location": "Берестин",
-    "lat": 49.3741326,
-    "lng": 35.4494234,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-1-2-chastinu-budinku-sadibnogo-tipu-IDVro7H.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Продаётся дом  в Матвеевке. Без комиссии.",
-    "price": "13 999 $ Договірна",
-    "location": "Миколаїв, Центральний",
-    "lat": 47.0155711,
-    "lng": 31.9961484,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodaetsya-dom-v-matveevke-bez-komissii-ID100qvl.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "Дом с удобствами в селе 15км від міста",
@@ -360,14 +464,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/rozstrochka-m-nosvka-g-chornobilya-31-privatizov-bud-ta-dlyanka-0-10ga-IDYvkgo.html?search_reason=search%7Corganic"
   },
   {
-    "title": "продаєм будинок із жилою літнєю кухнею",
-    "price": "8 500 $ Договірна",
-    "location": "Попівка",
-    "lat": 49.0212883,
-    "lng": 37.9385185,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-z-zhiloyu-ltnyu-kuhneyu-IDZk0n2.html?search_reason=search%7Corganic"
-  },
-  {
     "title": "Будинок під зніс",
     "price": "9 000 $",
     "location": "Кропивницький, Подільський",
@@ -392,6 +488,14 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/dacha-na-beregu-limana-v-pervoy-linii-IDZwh1T.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Дмитрівка, Мила, смарт-квартира з власним двориком",
+    "price": "12 000 $",
+    "location": "Мила",
+    "lat": 50.441376,
+    "lng": 30.172302,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/dmitrvka-mila-smart-kvartira-z-vlasnim-dvorikom-IDYXLDa.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "Будинок від власника. с. Березівка Мог Под район Вінницька обл Житлови",
     "price": "13 500 $ Договірна",
     "location": "Березівка",
@@ -414,30 +518,6 @@
     "lat": 48.4043673,
     "lng": 35.275539,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-60kv-m-smt-yavornitskelaronobudinok-60ul-zatishna-64-IDZSlYU.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продам(ОБМІНЯЮ)будинок Орлівщина",
-    "price": "13 400 $ Договірна",
-    "location": "Орлівщина",
-    "lat": 48.659481,
-    "lng": 35.362591,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodamobmnyayubudinok-orlvschina-IDW7dKz.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "Продается дача Ракетное урочище",
-    "price": "14 000 $",
-    "location": "Миколаїв, Центральний",
-    "lat": 47.0155711,
-    "lng": 31.9961484,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodaetsya-dacha-raketnoe-urochische-ID104xAU.html?search_reason=search%7Cpromoted"
-  },
-  {
-    "title": "продаєм будинок із жилою літнєю кухнею",
-    "price": "8 500 $ Договірна",
-    "location": "Попівка",
-    "lat": 49.0212883,
-    "lng": 37.9385185,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-z-zhiloyu-ltnyu-kuhneyu-IDZk0n2.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "Продається житловий будинок с.Руда",
@@ -496,6 +576,14 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-tepliy-budinok-IDZVV6k.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Продам(ОБМІНЯЮ)будинок Орлівщина",
+    "price": "13 400 $ Договірна",
+    "location": "Орлівщина",
+    "lat": 48.659481,
+    "lng": 35.362591,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodamobmnyayubudinok-orlvschina-IDW7dKz.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "Продам будинок за Одесою Камянка",
     "price": "9 500 $",
     "location": "Біляївка",
@@ -518,14 +606,6 @@
     "lat": 47.8855105,
     "lng": 33.3065468,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodazh-budinku-v-tsm-rayon-po-vul-vershinna-IDZySsL.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Будинок в місті Носівка.",
-    "price": "11 000 $ Договірна",
-    "location": "Носівка",
-    "lat": 50.9377744,
-    "lng": 31.5812258,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-mst-nosvka-IDYd2kO.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "Дом-дача в 7 мин. от Котовского!",
@@ -584,6 +664,22 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-dachu-shinnik-2-bystraya-sdelka-IDWhI3r.html?search_reason=search%7Corganic"
   },
   {
+    "title": "2поверховий дім 31 м2 меблі техніка 2 км Миколаїв Тернівка дача Вимпел",
+    "price": "6 000 $",
+    "location": "Каравелове",
+    "lat": 47.0109366,
+    "lng": 32.0554514,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/2poverhoviy-dm-31-m2-mebl-tehnka-2-km-mikolav-ternvka-dacha-vimpel-IDZslWJ.html?search_reason=search%7Cpromoted"
+  },
+  {
+    "title": "Продам житло 75м2",
+    "price": "7 000 $ Договірна",
+    "location": "Брилівка",
+    "lat": 46.4201722,
+    "lng": 33.1410545,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-zhitlo-75m2-IDIa41t.html?search_reason=search%7Cpromoted"
+  },
+  {
     "title": "Продаж будинку ЦМР  Змичка,Авіаколедж,  ТЕРМІНОВО, Торг",
     "price": "12 000 $ Договірна",
     "location": "Кривий Ріг, Центрально-Міський",
@@ -592,28 +688,12 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodazh-budinku-tsmr-zmichka-avakoledzh-termnovo-torg-IDZxYhO.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Продам житло 75м2",
-    "price": "7 000 $ Договірна",
-    "location": "Брилівка",
-    "lat": 46.4201722,
-    "lng": 33.1410545,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-zhitlo-75m2-IDIa41t.html?search_reason=search%7Corganic"
-  },
-  {
     "title": "Продається будинок в сільській місцевості",
     "price": "6 000 $ Договірна",
     "location": "Маломихайлівка",
     "lat": 48.0905779,
     "lng": 36.4104291,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-v-slsky-mstsevost-IDZjrCy.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продамо дача-будинок",
-    "price": "11 000 $ Договірна",
-    "location": "Запоріжжя, Олександрiвський",
-    "lat": 47.8219961,
-    "lng": 35.1843837,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodamo-dacha-budinok-ID103h9q.html?search_reason=search%7Cpromoted"
   },
   {
     "title": "Продам дом село Шевченковка Магдалиновский район",
@@ -696,14 +776,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-dom-s-gazom-IDZuxKN.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Будиночок на березі Дніпра",
-    "price": "7 900 $ Договірна",
-    "location": "Запоріжжя, Вознесенівський",
-    "lat": 47.8712558,
-    "lng": 35.1043438,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinochok-na-berez-dnpra-IDUYT6t.html?search_reason=search%7Cpromoted"
-  },
-  {
     "title": "Продам частину будинку  з гаражем в м. Шаргород Жмеринського р-ну",
     "price": "8 449 $ Договірна",
     "location": "Гибалівка",
@@ -721,7 +793,7 @@
   },
   {
     "title": "Будинок Шумськ !",
-    "price": "13 214.21 $",
+    "price": "13 219.21 $",
     "location": "Шумськ",
     "lat": 50.1183638,
     "lng": 26.1186214,
@@ -737,7 +809,7 @@
   },
   {
     "title": "Продам или сдам в аренду дом",
-    "price": "6 890.22 $",
+    "price": "6 896.98 $",
     "location": "Христо-Ботеве",
     "lat": 46.7732198,
     "lng": 30.7971588,
@@ -758,6 +830,14 @@
     "lat": 46.9776096,
     "lng": 31.9627781,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodayu-dachu-dzvont-vdpovm-na-vs-pitannya-IDZU8OE.html?search_reason=search%7Corganic"
+  },
+  {
+    "title": "Будинок в Полтавській області",
+    "price": "8 500 $ Договірна",
+    "location": "Курінька",
+    "lat": 50.1979061,
+    "lng": 32.7406169,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-poltavsky-oblast-IDN3ffD.html?search_reason=search%7Corganic"
   },
   {
     "title": "Будинок біля Чорного моря с.Тузли",
@@ -873,7 +953,7 @@
   },
   {
     "title": "Продам дачу Петровец-2",
-    "price": "7 464.40 $",
+    "price": "7 471.73 $",
     "location": "Шевченко",
     "lat": 48.22191,
     "lng": 37.14211,
@@ -929,7 +1009,7 @@
   },
   {
     "title": "Дом, в г. Городня, Черниговская обл.",
-    "price": "10 341.56 $",
+    "price": "10 345.47 $",
     "location": "Городня",
     "lat": 51.8915393,
     "lng": 31.595545,
@@ -942,14 +1022,6 @@
     "lat": 47.0155711,
     "lng": 31.9961484,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodayu-pol-doma-ternovka-ost-veteranov-ID104Vy5.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Продається будинок із земельним участком у с. Любимівка",
-    "price": "9 699 $ Договірна",
-    "location": "Любимівка",
-    "lat": 48.0480279,
-    "lng": 39.4527482,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-z-zemelnim-uchastkom-u-s-lyubimvka-IDZX8Dx.html?search_reason=search%7Corganic"
   },
   {
     "title": "Будинок КРЕС, вул Соколина, 3 кімн, газ, с/в",
@@ -1305,7 +1377,7 @@
   },
   {
     "title": "Продаю будинок з великим городом",
-    "price": "11 483.69 $ Договірна",
+    "price": "11 494.97 $ Договірна",
     "location": "Тридуби",
     "lat": 48.0763171,
     "lng": 30.4120693,
@@ -1785,7 +1857,7 @@
   },
   {
     "title": "Продам дом ПГТ Андреевка Харьковская область",
-    "price": "10 335.32 $",
+    "price": "10 346.05 $",
     "location": "Андріївка",
     "lat": 49.54559,
     "lng": 36.61159,
@@ -2353,7 +2425,7 @@
   },
   {
     "title": "Продається будинок",
-    "price": "6 890.22 $",
+    "price": "6 897.37 $",
     "location": "Владичень",
     "lat": 45.565788,
     "lng": 28.602909,
@@ -2523,8 +2595,8 @@
     "title": "Продам дачу  Тарановка",
     "price": "8 500 $ Договірна",
     "location": "Таранівка",
-    "lat": 49.0313477,
-    "lng": 29.0266671,
+    "lat": 49.0256858,
+    "lng": 29.0234072,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-dachu-taranovka-IDYvDS2.html?search_reason=search%7Corganic"
   },
   {
@@ -2712,14 +2784,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-z-fruktovim-sadom-IDYWL2E.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Радушне. Продам будинок. Сертифікат",
-    "price": "8 000 $ Договірна",
-    "location": "Радушне",
-    "lat": 47.8226364,
-    "lng": 33.5014543,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/radushne-prodam-budinok-sertifkat-IDYFB38.html?search_reason=search%7Corganic"
-  },
-  {
     "title": "Продам дом в черте города",
     "price": "11 500 $",
     "location": "Самар",
@@ -2878,14 +2942,6 @@
     "lat": 47.8760026,
     "lng": 33.4663499,
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodazh-abo-obmn-budinku-selische-zalznichne-dovgintsevo-IDYmsyL.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Будинок в Кременці Тернопільщина 13500$",
-    "price": "13 500 $ Договірна",
-    "location": "Кременець",
-    "lat": 50.0960966,
-    "lng": 25.7260783,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-krements-ternoplschina-13500-IDZnfb7.html?search_reason=search%7Corganic"
   },
   {
     "title": "Продам будинок в селі Боршна",
@@ -3073,7 +3129,7 @@
   },
   {
     "title": "Продаю дім, свіжий ремонт",
-    "price": "13 206.25 $",
+    "price": "13 219.96 $",
     "location": "Тростянець",
     "lat": 50.48046,
     "lng": 34.96467,
@@ -3632,14 +3688,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/zaporozhe-tsentr-ul-vishnevaya-obmen-varianty-IDUhlg8.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Продам будинок  в селі",
-    "price": "5 500 $",
-    "location": "Нижня Ланна",
-    "lat": 49.375114,
-    "lng": 35.2107216,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-budinok-v-sel-ID100Zx6.html?search_reason=search%7Corganic"
-  },
-  {
     "title": "Продам большой дом с удобствами и мебелью,село  Богодаровка",
     "price": "13 500 $ Договірна",
     "location": "Верхньодніпровськ",
@@ -3766,14 +3814,6 @@
     "lat": 48.3537852,
     "lng": 35.4476026,
     "link": "https://www.olx.ua/d/uk/obyavlenie/zhiloy-chastnyy-dom-srochnaya-prodazha-IDWHBPc.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Будинок с. Моринці.",
-    "price": "11 483.69 $ Договірна",
-    "location": "Моринці",
-    "lat": 49.4999518,
-    "lng": 31.152996,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-s-morints-IDOYvTr.html?search_reason=search%7Corganic"
   },
   {
     "title": "Продам будинок с-ще Чорнобай",
@@ -4257,7 +4297,7 @@
   },
   {
     "title": "Продається будинок в с. Білівці Дністровського р-ну, Чернівецької обл.",
-    "price": "13 780.43 $ Договірна",
+    "price": "13 794.74 $ Договірна",
     "location": "Білівці",
     "lat": 48.51185,
     "lng": 26.36067,
@@ -4473,7 +4513,7 @@
   },
   {
     "title": "Продаю Дача кооп-тив Тясмин с . Чубовка (Чернявка)",
-    "price": "5 512.17 $ Договірна",
+    "price": "5 517.89 $ Договірна",
     "location": "Чубівка",
     "lat": 47.653198,
     "lng": 29.5879,
@@ -4561,7 +4601,7 @@
   },
   {
     "title": "Продається будинок. Криворізький район.",
-    "price": "11 483.69 $ Договірна",
+    "price": "11 495.61 $ Договірна",
     "location": "Апостолове",
     "lat": 47.6617478,
     "lng": 33.7180001,
@@ -4833,7 +4873,7 @@
   },
   {
     "title": "Продаж без Торга .  посёлок Грабари Шевченківського район",
-    "price": "11 483.69 $",
+    "price": "11 495.61 $",
     "location": "Запоріжжя, Шевченківський",
     "lat": 47.8558741,
     "lng": 35.2401572,
@@ -5761,7 +5801,7 @@
   },
   {
     "title": "Продам 2эт ДОМ ДАЧА  19км от  Николаева ПРОПИска‼️ газ,скважина,кондиц",
-    "price": "11 482.54 $",
+    "price": "11 494.46 $",
     "location": "Лупареве",
     "lat": 46.6943404,
     "lng": 31.9816968,
@@ -5840,6 +5880,14 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-polovina-budinku-IDXbTxY.html?search_reason=search%7Corganic"
   },
   {
+    "title": "Продается дом ..",
+    "price": "11 570.72 $ Договірна",
+    "location": "Вільний Посад",
+    "lat": 47.9639742,
+    "lng": 33.5847978,
+    "link": "https://www.olx.ua/d/uk/obyavlenie/prodaetsya-dom-IDZRfvF.html?search_reason=search%7Corganic"
+  },
+  {
     "title": "Дом в пгт. Червоногригоровка",
     "price": "7 000 $ Договірна",
     "location": "Червоногригорівка",
@@ -5897,7 +5945,7 @@
   },
   {
     "title": "М. Новоселиця Продається будинок",
-    "price": "13 780.43 $ Договірна",
+    "price": "13 794.74 $ Договірна",
     "location": "Новоселиця",
     "lat": 48.6317447,
     "lng": 35.2245396,
@@ -6320,14 +6368,6 @@
     "link": "https://www.olx.ua/d/uk/obyavlenie/prodatsya-budinok-IDZDe3l.html?search_reason=search%7Corganic"
   },
   {
-    "title": "Продам большой дом",
-    "price": "13 000 $",
-    "location": "Чепине",
-    "lat": 48.54369,
-    "lng": 34.343143,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/prodam-bolshoy-dom-IDZUm4U.html?search_reason=search%7Corganic"
-  },
-  {
     "title": "Продам дом в с. ГУНЬКИ",
     "price": "10 000 $",
     "location": "Гуньки",
@@ -6417,7 +6457,7 @@
   },
   {
     "title": "Продається господарство в селі",
-    "price": "8 611.62 $",
+    "price": "8 620.56 $",
     "location": "Рудка",
     "lat": 50.0104622,
     "lng": 32.525366,
@@ -6473,7 +6513,7 @@
   },
   {
     "title": "Приватний Будинок",
-    "price": "13 780.43 $",
+    "price": "13 794.74 $",
     "location": "Билбасівка",
     "lat": 48.8402826,
     "lng": 37.5075495,
@@ -6577,7 +6617,7 @@
   },
   {
     "title": "Двоповерховий заміський будинок з великою верандою",
-    "price": "11 483.69 $",
+    "price": "11 495.61 $",
     "location": "Перше Травня",
     "lat": 48.2637242,
     "lng": 37.1435051,
@@ -6958,22 +6998,6 @@
     "lat": 50.041164,
     "lng": 31.869675,
     "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-v-sel-z-sverdlovinoyu-garazhem-angarom-dlya-slhoztehnki-IDZ94Ok.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Будинок обігрітий можна зайти і жить, село затишне і тихе, є санвузол",
-    "price": "13 600 $",
-    "location": "Мала Березанка",
-    "lat": 50.388451,
-    "lng": 31.71307,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/budinok-obgrtiy-mozhna-zayti-zhit-selo-zatishne-tihe-sanvuzol-IDZl154.html?search_reason=search%7Corganic"
-  },
-  {
-    "title": "Домоволодіння в с. Яснозір'я (санвузол, піч з лежанкою, 3 фази) (п3)",
-    "price": "8 500 $",
-    "location": "Яснозір'я",
-    "lat": 49.474923,
-    "lng": 31.6028633,
-    "link": "https://www.olx.ua/d/uk/obyavlenie/domovolodnnya-v-s-yasnozrya-sanvuzol-pch-z-lezhankoyu-3-fazi-p3-IDY4wWX.html?search_reason=search%7Corganic"
   },
   {
     "title": "Продается дом на Слободке.",

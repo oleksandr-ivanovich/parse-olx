@@ -2,7 +2,7 @@ name: OLX Parser
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # Запуск кожні 2 години
+    - cron: '0 */4 * * *' # Запуск кожні 4 години
   workflow_dispatch: # Дозволяє запускати скрипт вручну кнопкою
 
 permissions:
